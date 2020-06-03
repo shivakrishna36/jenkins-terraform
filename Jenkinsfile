@@ -18,7 +18,7 @@ pipeline {
       
        stage('check cmd') {
             steps {
-               dir('/terraform') {
+               dir('/teraform') {
                   bat 'terraform --version'
                   }
                }
