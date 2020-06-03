@@ -7,6 +7,7 @@ pipeline {
 
     	}
    stages {
+      
       stage('Hello') {
          steps {
              bat 'terraform --version'
@@ -14,8 +15,8 @@ pipeline {
          }
       }
       
-      stages {
-         stage('check cmd') {
+      
+       stage('check cmd') {
             steps {
                dir('/terraform') {
                   bat 'terraform init'
@@ -23,7 +24,7 @@ pipeline {
                   }
                }
             }
-         }
+         
       
       }
 }
