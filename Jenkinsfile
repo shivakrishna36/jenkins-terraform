@@ -13,5 +13,16 @@ pipeline {
              echo 'Hello World'
          }
       }
+      
+      stages {
+      stage('check cmd') {
+         steps {
+             dir('/terraform') {
+                bat 'terraform init'
+                bat 'terraform apply -auto-approve'
+                  }
+         }
+      }
+      
    }
 }
