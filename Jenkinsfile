@@ -1,11 +1,14 @@
 pipeline {
    agent any
+      tools {
+        maven 'maven3.6.3'
+        jdk 'jdk8'
+        terraform 'terraform'
 
+    	}
    stages {
       stage('Hello') {
          steps {
-             def tfHome = tool name: 'terraform', type: 'com.cloudbees.jenkins.plugins.customtools.CustomTool'
-             env.Path = "${tfHome};${env.Path}"
              bat 'terraform --version'
              echo 'Hello World'
          }
