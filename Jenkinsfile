@@ -19,8 +19,7 @@ pipeline {
        stage('check cmd') {
             steps {
                dir('/terraform') {
-                  bat 'terraform init'
-                  bat 'terraform apply -auto-approve'
+                  bat 'terraform --version'
                   }
                }
             }
